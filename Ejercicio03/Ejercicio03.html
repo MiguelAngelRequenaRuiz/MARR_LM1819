@@ -3,29 +3,30 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Tablas</title>
+    <title>Ejercicio03</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-    <table style="border: 1px solid black; border-collapse: collapse">
-         <caption>Tabla comparativa de las características técnicas de los reproductores MP3</caption>
+    <table  style="border: 1px solid black; border-collapse: collapse" rules="groups">
+        <caption>Tabla comparativa de las características técnicas de los reproductores MP3</caption>
             
             <thead>
-             <tr style="border: 1px solid black; border-collapse: collapse">
-                <th style="border: 1px solid black; border-collapse: collapse"></th>
-                <th style="border: 1px solid black; border-collapse: collapse">MP3 Pequeño <img src="MP3 pequeño.jpg" width="80" height="50"></th>
-                <th style="border: 1px solid black; border-collapse: collapse">MP3 Grande <img src="MP3 pequeño.jpg" width="150" height="120"></th>
-             </tr>
+                <tr style="border: 1px solid black; border-collapse: collapse">
+                    <th style="border: 1px solid black; border-collapse: collapse"></th>
+                    <th coldspan="3" style="border: 1px solid black; border-collapse: collapse"><img src="MP3 pequeño.jpg" width="80" height="50"><br/><strong>MP3 Mini</strong></th>
+                    <th coldspan="2" style="border: 1px solid black; border-collapse: collapse"><img src="MP3 pequeño.jpg" width="150" height="120"><br/><strong>MP3 Grande</strong></th>
+               </tr>
+
             </thead>
 
             <tbody>
-                <tr style="border: 1px solid black; border-collapse: collapse">
-                    <th style="border: 1px solid black; border-collapse: collapse">Capacidad de almacenamiento</th>
-                    <td style="border: 1px solid black; border-collapse: collapse"><table style="border: 1px solid black; border-collapse: collapse"></td>
+                <tr >
+                    <th style="border: 1px solid black; border-collapse: collapse">Capacidad de <br/> almacenamiento</th>
                     <td style="border: 1px solid black; border-collapse: collapse"></td>
+                    <td></td>
                 </tr>
-                
+
                 <tr style="border: 1px solid black; border-collapse: collapse">
                     <th style="border: 1px solid black; border-collapse: collapse">Colores</th>
                     <td style="border: 1px solid black; border-collapse: collapse"></td>
@@ -34,15 +35,21 @@
                     
                <tr style="border: 1px solid black; border-collapse: collapse">
                     <th style="border: 1px solid black; border-collapse: collapse">Pantalla</th>
-                    <td style="border: 1px solid black; border-collapse: collapse"></td>
-                    <td style="border: 1px solid black; border-collapse: collapse"></td>
+                    <td style="border: 1px solid black; border-collapse: collapse">LCD de 3 cm (diagonal) con <br/>retroiluminación </td>
+                    <td style="border: 1px solid black; border-collapse: collapse">LCD de 6 cm (diagonal) <br/>con retroiluminación </td>
                 </tr>
 
+                <tr ><th rowspan="3">Tiempo de carga</th></tr>
+
                 <tr style="border: 1px solid black; border-collapse: collapse">
-                    <th style="border: 1px solid black; border-collapse: collapse">Tiempo de carga</th>
-                    <td style="border: 1px solid black; border-collapse: collapse">Unas 3 horas</td>
-                    <td style="border: 1px solid black; border-collapse: collapse">Unas 2 horas para alcanzar el 80% de la capacidad</td>
+                    <td rowspan="2" style="border: 1px solid black; border-collapse: collapse">Unas 3 horas</td>
+                    <td style="border: 1px solid black; border-collapse: collapse">Unas 4 horas</td>
                 </tr>
+
+                <tr>
+                    <td style="border: 1px solid black; border-collapse: collapse">Unas 2 horas para<br/> alcanzar el 80% de la<br/> capacidad</td>
+                </tr>
+                    
             </tbody>
             
             
@@ -53,12 +60,6 @@
         
 
     </table>
-
-    <!--<tr style="border: 1px solid black">
-            <td style="border: 1px solid black"> </td>
-            <td style="border: 1px solid black"> <img src="MP3 pequeño.jpg" alt="MP3 Grande">MP3 Grande  </td>
-            <td style="border: 1px solid black"> MP3 Pequeño</td>
-       </tr> <-->
     
 </body>
 
