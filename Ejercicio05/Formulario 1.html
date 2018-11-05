@@ -3,11 +3,79 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Formulario 1</title>
+    <title>Formulario de prueba de HTML5</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 <body>
-    
+    <form action="" method="GET">
+        
+        <p>
+            <label for="nombre">Nombre de Usuario:</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre de Usuario" autofocus
+            size="35" maxlength="35"  required/>
+        </p>
+
+        <p>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" name="email" id="email" placeholder="Correo electrónico" autofocus
+            size="35" maxlength="35" required/> 
+        </p>
+
+        <p>
+            <label for="url">url:</label>
+            <input type="url" name="url" id="url" placeholder="Escribe la URL de tu página web personal" autofocus
+            size="50" maxlength="55" />
+        </p>
+
+        <p>
+            <label for="Fecha">Fecha:</label>
+            <input type="date" name="Fecha" id="Fecha" />
+        </p>
+
+        <p>
+            <label for="Tiempo">Tiempo:</label>
+            <input type="time" name="Tiempo" id="Tiempo"/>
+        </p>
+
+        <p>
+            <label for="Fecha y Hora">Fecha y Hora</label>
+            <input type="datetime-local" name="Fecha y Tiempo" id="Fecha y Hora"/>            
+        </p>
+
+        <p>
+            <label for="Mes">Mes:</label>
+            <input type="month" name="Mes" id="Mes"/>
+        </p>
+
+        <p>
+                <label for="Semana">Semana:</label>
+                <input type="week" name="Semana" id="Semana"/>
+        </p>
+
+        <p>
+                <label for="Número">Número (min -10, max 10):</label>
+                <input type="number" name="Número" id="Número" min="-10" max="10"/>
+        </p>
+        
+        <p>
+                <label for="Teléfono"> Teléfono:</label>
+                <input type="tel" name="Teléfono" id="Teléfono"/>
+        </p>
+
+        <p>
+                <label for="Término de búsqueda"> Término de búsqueda:</label>
+                <input type="search" name="Término de búsqueda" id="Término de búsqueda"/>
+        </p>
+
+        <p>
+                <label for="Color favorito"> Color favorito:</label>
+                <input type="color" name="Color favorito" id="Color favorito"/>
+        </p>
+
+        <p>
+                <input type="submit" value="Enviar" />
+        </p>
+    </form>
 </body>
 </html>
