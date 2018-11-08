@@ -3,14 +3,77 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Formulario 2</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+    <h1>Beca SLN18J4QAX</h1>
     <form action="" method="GET" >
+        <p>Este formulario es estrictamente para residentes en Andalucía</p>
+        <p>
+            <label for="Nombre">Nombre:</label>
+            <input type="text" name="Nombre" id="Nombre" placeholder="Inserte su nombre " autofocus="autofocus" autocomplete="tel" required="required"
+            size="35" maxlength="35" >
+        </p>
 
+        <p>
+                <label >¿En que ciudad vives?</label>
+                <input list="Provincias" >
+                <datalist id="Provincias">
+                    <option value="Sevilla">Sevilla</option>
+                    <option value="Huelva">Huelva</option>
+                    <option value="Cádiz">Cádiz</option>
+                    <option value="Jaén">Jaén</option>
+                    <option value="Córdoba">Córdoba</option>
+                    <option value="Granada">Granada</option>
+                    <option value="Málaga">Málaga</option>
+                    <option value="Almería">Almería</option>
+                </datalist>
+            </p>
+
+        <p>
+                <p>¿Has estudiado otro curso en los últimos años?</p>
+
+                <div>
+                <input type="radio" id="Si" name="Vives" value="Si"
+                        checked>
+                <label for="Si">Si</label>
+                </div>
+                
+                <div>
+                <input type="radio" id="No" name="Vives" value="No">
+                <label for="No">No</label>
+                </div>
+        </p>
+
+
+
+        <p> 
+            <label for="tiempo">¿Hace cuantos años?</label>
+            <input type="number" name="tiempo" id="tiempo" min="0" max="10" >
+        </p>
+
+        <p>
+            <label for="Curso">Qué curso fue:</label>
+            <input list="Curso">
+            <datalist id="Curso">
+                <option value="Bachillerato">Bachillerato</option>
+                <option value="Grado Medio"> Grado Medio</option>
+                <option value="Grado Superior"> Grado Superior</option>
+            </datalist>
+        </p>
+        <p>
+            <label for="dni">Copia del dni y empadonamiento:</label>
+            <input type="file" name="dni" id="dni" >
+        </p>
+    
+        <p>
+            <label for="passwd">Contraseña:</label>
+            <input type="password" name="passwd" id="passwd" pattern="[a-z]{8,}" required>
+        </p>
+
+            <progress></progress>
 
     </form>
-    
 </body>
 </html>
