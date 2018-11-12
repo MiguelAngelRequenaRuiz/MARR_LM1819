@@ -8,77 +8,85 @@
 </head>
 <body>
     <h1>Beca SLN18J4QAX</h1>
-    <form action="" method="GET" >
-        <p>Este formulario es estrictamente para residentes en Andalucía</p>
-        <p>
-            <label for="Nombre">Nombre:</label>
-            <input type="text" name="Nombre" id="Nombre" placeholder="Introduzca su nombre " autofocus="autofocus" autocomplete="tel" required="required"
-            size="35" maxlength="35" >
-        </p>
+    <table>
+        <form action="" method="GET" >
+            <tr> <td> Este formulario es estrictamente para residentes en Andalucía</td></tr>
+            <tr>
+                <td><label for="Nombre">Nombre:</label></td>
+                <td><input type="text" name="Nombre" id="Nombre" placeholder="Introduzca su nombre " autofocus="autofocus" autocomplete="tel" required="required"
+                size="35" maxlength="35" ></td>
+            </tr>
 
-        <p>
-            <label for="passwd">Contraseña:</label>
-            <input type="password" name="passwd" id="passwd" pattern="[0-9]{1}[a-z]{7,}[A-Z]{1}" autofocus="autofocus" autocomplete="tel" required="required" 
-            title="La contraseña debe tener al menos 8 caracteres, comenzar por un número y terminar con una mayúsculas"
-            placeholder="Introduzca su contraseña ">
-        </p>
+            <tr>
+                <td><label for="passwd">Contraseña:</label></td>
+                <td>
+                    <input type="password" name="passwd" id="passwd" pattern="[0-9]{1}[a-z]{7,}[A-Z]{1}" autofocus="autofocus" autocomplete="tel" required="required" 
+                title="La contraseña debe tener al menos 8 caracteres, comenzar por un número y terminar con una mayúsculas"
+                placeholder="Introduzca su contraseña ">
+                </td>
+            </tr>
 
-        <p>
-                <label >¿En que ciudad vives?</label>
-                <input list="Provincias" >
-                <datalist id="Provincias">
-                    <option value="Sevilla">Sevilla</option>
-                    <option value="Huelva">Huelva</option>
-                    <option value="Cádiz">Cádiz</option>
-                    <option value="Jaén">Jaén</option>
-                    <option value="Córdoba">Córdoba</option>
-                    <option value="Granada">Granada</option>
-                    <option value="Málaga">Málaga</option>
-                    <option value="Almería">Almería</option>
+            <tr>
+                <td><label >¿En que ciudad vives?</label></td>
+                <td>
+                    <input list="Provincias" >
+                    <datalist id="Provincias">
+                        <option value="Sevilla">Sevilla</option>
+                        <option value="Huelva">Huelva</option>
+                        <option value="Cádiz">Cádiz</option>
+                        <option value="Jaén">Jaén</option>
+                        <option value="Córdoba">Córdoba</option>
+                        <option value="Granada">Granada</option>
+                        <option value="Málaga">Málaga</option>
+                        <option value="Almería">Almería</option>
+                    </datalist>
+                </td>
+            </tr>
+
+            <tr>
+                    <td>¿Has estudiado otro curso en los últimos años?</td>
+                    <td>
+                    <input type="radio" id="Si" name="Vives" value="Si"
+                            checked>
+                    <label for="Si">Si</label>
+                    </td>
+                    
+                    <td>
+                    <input type="radio" id="No" name="Vives" value="No">
+                    <label for="No">No</label>
+                    </td>
+            </tr>
+
+
+
+            <tr> 
+                <td><label for="tiempo">¿Hace cuantos años?</label></td>
+                <td><input type="number" name="tiempo" id="tiempo" min="0" max="10" ></td>
+            </tr>
+
+            <tr>
+                <td><label for="Curso">Qué curso fue:</label></td>
+                <td>
+                <input list="Curso">
+                <datalist id="Curso">
+                    <option value="Bachillerato">Bachillerato</option>
+                    <option value="Grado Medio"> Grado Medio</option>
+                    <option value="Grado Superior"> Grado Superior</option>
                 </datalist>
-            </p>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="dni">Copia del dni y empadonamiento:</label></td>
+                <td><input type="file" name="dni" id="dni" ></td>
+            </tr>
+        
+            <tr>
+                <td><progress></progress></td>
+                <td><input type="submit" value="Enviar"></td>
+            </tr>
+              
 
-        <p>
-                <p>¿Has estudiado otro curso en los últimos años?</p>
-
-                <div>
-                <input type="radio" id="Si" name="Vives" value="Si"
-                        checked>
-                <label for="Si">Si</label>
-                </div>
-                
-                <div>
-                <input type="radio" id="No" name="Vives" value="No">
-                <label for="No">No</label>
-                </div>
-        </p>
-
-
-
-        <p> 
-            <label for="tiempo">¿Hace cuantos años?</label>
-            <input type="number" name="tiempo" id="tiempo" min="0" max="10" >
-        </p>
-
-        <p>
-            <label for="Curso">Qué curso fue:</label>
-            <input list="Curso">
-            <datalist id="Curso">
-                <option value="Bachillerato">Bachillerato</option>
-                <option value="Grado Medio"> Grado Medio</option>
-                <option value="Grado Superior"> Grado Superior</option>
-            </datalist>
-        </p>
-        <p>
-            <label for="dni">Copia del dni y empadonamiento:</label>
-            <input type="file" name="dni" id="dni" >
-        </p>
-    
-        <p>
-            <input type="submit" value="Enviar">
-        </p>
-            <progress></progress>
-
-    </form>
+        </form>
+    </table>
 </body>
 </html>
