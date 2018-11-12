@@ -12,7 +12,7 @@
         <p>Este formulario es estrictamente para residentes en Andalucía</p>
         <p>
             <label for="Nombre">Nombre:</label>
-            <input type="text" name="Nombre" id="Nombre" placeholder="Inserte su nombre " autofocus="autofocus" autocomplete="tel" required="required"
+            <input type="text" name="Nombre" id="Nombre" placeholder="Introduzca su nombre " autofocus="autofocus" autocomplete="tel" required="required"
             size="35" maxlength="35" >
         </p>
 
@@ -69,9 +69,11 @@
     
         <p>
             <label for="passwd">Contraseña:</label>
-            <input type="password" name="passwd" id="passwd" pattern="[a-z]{8,}" required>
+            <input type="password" name="passwd" id="passwd" pattern="[0-9]{1}[a-z]{7,}[A-Z]{1}" autofocus="autofocus" autocomplete="tel" required="required" title="La contraseña debe tener al menos 8 caracteres, comenzar por un número y terminar con una mayúsculas">
         </p>
-
+        <p>
+            <input type="submit" value="Enviar">
+        </p>
             <progress></progress>
 
     </form>
