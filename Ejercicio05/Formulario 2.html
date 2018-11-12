@@ -17,6 +17,13 @@
         </p>
 
         <p>
+            <label for="passwd">Contraseña:</label>
+            <input type="password" name="passwd" id="passwd" pattern="[0-9]{1}[a-z]{7,}[A-Z]{1}" autofocus="autofocus" autocomplete="tel" required="required" 
+            title="La contraseña debe tener al menos 8 caracteres, comenzar por un número y terminar con una mayúsculas"
+            placeholder="Introduzca su contraseña ">
+        </p>
+
+        <p>
                 <label >¿En que ciudad vives?</label>
                 <input list="Provincias" >
                 <datalist id="Provincias">
@@ -67,10 +74,6 @@
             <input type="file" name="dni" id="dni" >
         </p>
     
-        <p>
-            <label for="passwd">Contraseña:</label>
-            <input type="password" name="passwd" id="passwd" pattern="[0-9]{1}[a-z]{7,}[A-Z]{1}" autofocus="autofocus" autocomplete="tel" required="required" title="La contraseña debe tener al menos 8 caracteres, comenzar por un número y terminar con una mayúsculas">
-        </p>
         <p>
             <input type="submit" value="Enviar">
         </p>
