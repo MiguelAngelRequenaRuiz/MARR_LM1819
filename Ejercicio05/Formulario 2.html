@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <h1>Beca SLN18J4QAX</h1>
+    <h1>Beca 5L1J4QA</h1>
     <table>
         <form action="" method="GET" >
-            <tr> <td> Este formulario es estrictamente para residentes en Andalucía</td></tr>
+            
             <tr>
-                <td><label for="Nombre">Nombre:</label></td>
+                <td><label for="Nombre">Nombre y apellidos:</label></td>
                 <td><input type="text" name="Nombre" id="Nombre" placeholder="Introduzca su nombre " autofocus="autofocus" autocomplete="tel" required="required"
                 size="35" maxlength="35" ></td>
             </tr>
@@ -27,7 +27,13 @@
             </tr>
 
             <tr>
-                <td><label >¿En que ciudad vives?</label></td>
+                    <td><label for="email">Correo electrónico:</label></td>
+                    <td><input type="email" name="email" id="email" placeholder="Correo electrónico" autofocus size="35" maxlength="35" required/></td>
+            </tr>
+
+
+            <tr>
+                <td><label >Ciudad en la que vives actualmente:</label></td>
                 <td>
                     <input list="Provincias" >
                     <datalist id="Provincias">
@@ -76,10 +82,18 @@
                 </td>
             </tr>
             <tr>
-                <td><label for="dni">Copia del dni y empadonamiento:</label></td>
+                <td><label for="dni">Copia del dni:</label></td>
                 <td><input type="file" name="dni" id="dni" ></td>
             </tr>
-        
+            <tr>
+                <td><label for="Teléfono"> Teléfono:</label></td>
+                <td><input type="tel" name="Teléfono" id="Teléfono"/></td>
+            </tr>
+            <tr>
+                <td><label for="Fecha y Hora">Fecha y Hora de entrega:</label></td>
+                <td><input type="datetime-local" name="Fecha y Tiempo" id="Fecha y Hora"/></td>           
+            </tr>
+
             <tr>
                 <td><progress></progress></td>
                 <td><input type="submit" value="Enviar"></td>
