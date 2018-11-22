@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Miguel Ángel Requena Ruiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <p>
+    <em> texto enfatizado</em> </br>
+    <strong> texto en negrita</strong> </br>
+    <dfn>texto definición</dfn> </br>
+    <code>Texto codigo fuente de ordenador </code> </br>
+    <kbd>Texto de teclado</kbd> </br>
+    <i>Variable</i>
+    En esta linease muestra <s>un texto tachado</s> y se simula <u> una corrección</u> </br>
+    <q>Esto es una cita</q> </br>
+    <span style="font-size:20px"> Este texto es mas grande</span> <span style="font-size:10px">este es mas pequeño</span> </br>
+    En esta linea tenemos <sup>super indice </sup> y <sub>subindice</sub>
+    <pre>       la     etiqueta "pre"     mantiene                        los espacios
+        y saltos de linea
+    </pre>
+    </p>
+    <p >
+        <div style=" width:900px; height:200px; background-color: rgb(185, 185, 51)">
+            <ul>
+                <h1 style="color: yellow">Lista de enlaces</h1>
+                <li>
+                    <ul >
+                            Buscadores
+                            <li > <a href="http://www.google.es"target="_blank" hreflang="es" rel="next" type="text/html"> Google</a> </li>
+                            <li>Bing</li>
+                    </ul>
+                </li>
+                <li>
+                        <ul >
+                            redes sociales
+                                <li><a href="https://es-es.facebook.com/"target="_blank" hreflang="es" rel="next" type="text/html"> Facebook</a></li>
+                                <li><a href="https://twitter.com/?lang=es"target="_blank" hreflang="es" rel="next" type="text/html"> Twiter</a></li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+    </p>
+
+    <p>
+       <table>
+        <tr>    
+                <td>
+                <h1 >Encabezado izquierda</h1>
+                <img src="mar.jpg" alt="mar">
+                </br>Fig. 1 Descripcion de la imagen
+                </td>
+                <td style="padding-top:60px" >
+                    <pre>
+La musica es segun la definición 
+tradicional del término ,el arte de
+tradicional del término ,el arte de
+tradicional del término ,el arte de
+tradicional del término ,el arte de
+tradicional del término ,el arte de
+tradicional del término ,el arte de
+tradicional del término ,el arte de
+tradicional del.
+                    </pre>
+                </td>
+
+        </tr>
+    </table>
+    </p>
+
+    <p>
+        <form action="">
+            <table>
+                
+                    <tr>
+                            <td><label for="Asunto">Asunto:</label></td>
+                            <td><input type="text" name="Asunto" id="Asunto" autofocus="autofocus" ></td>
+                    </tr>
+                    <tr>
+                            <td><label for="Primer apellido">*Primer apellido:</label></td>
+                            <td><input type="text" name="Primer apellido" id="Primer apellido" required="required" autofocus="autofocus"></td>
+                    </tr>
+                    <tr>
+                            <td><label for="Segundo apellido">Segundo apellido:</label></td>
+                            <td><input type="text" name="Segundo apellido" id="Segundo apellido" autofocus="autofocus"></td>
+                    </tr>
+                    <tr>
+                            <td><label for="Nombre">*Nombre:</label></td>
+                            <td><input type="text" name="Nombre" id="Nombre" required="required" autofocus="autofocus"></td>
+                    </tr>
+                    <tr>
+                            <td><label for="D.N.I./ Pasaporte/ N.I.E.">D.N.I./ Pasaporte/ N.I.E.:</label></td>
+                            <td><input type="text" name="D.N.I./ Pasaporte/ N.I.E." id="D.N.I./ Pasaporte/ N.I.E." autofocus="autofocus"></td>
+                    </tr>
+                    <tr>
+                            <td><label for="Correo electrónico">*Correo electrónico:</label></td>
+                            <td><input type="email" name="Correo electrónico" id="Correo electrónico" required="required" autofocus="autofocus"></td>
+                    </tr>
+                    <tr>
+                            <td><label for="Teléfono">Teléfono:</label></td>
+                            <td><input type="tel" name="Teléfono" id="Teléfono" autofocus="autofocus"></td>
+                    </tr>
+                    <tr>
+                            <td><label for="¿Sobre qué?">¿Sobre qué?</label></td>
+                            <td><input list="¿Sobre">
+                            <datalist id="¿Sobre" autofocus="autofocus">
+                                    <option value="Asuntos personales">Asuntos personales</option>
+                                    <option value="Asuntos judiciales">Asuntos judiciales</option>
+                                    <option value="Asuntos con la seguridad social">Asuntos con la seguridad social</option>
+                            </datalist>
+                            </td>
+                    </tr>
+                    <tr>
+                            <td><label for="¿Qué va a escribir?">¿Qué va a escribir?</label></td>
+                            <td><input list="¿Qué" autofocus="autofocus">
+                                <datalist id="¿Qué">
+                                        <option value="cosas">cosas</option>
+                                        <option value="libros">libros</option>
+                                        <option value="folletos">folletos</option>
+                                </datalist>
+                                </td>
+                    </tr>
+                    <tr>
+                            <td><label for="Texto del escrito">*Texto del escrito:</label></td>
+                            <td><input type="text" style="width:200px; height:50px;" required="required" autofocus="autofocus"></td>
+                    </tr>
+
+                    
+            </table>
+            <strong > Los datos facilitados son susceptibles de cesión cuando ésta sea precisa para tramitar su contestación</strong> <br>
+            <input type="button" value="Enviar" placeholder="Enviar">
+        </form>
+    </p>
+
+    <p>
+        <div style="width:1000px; height:50px; background-color: rgb(8, 98, 233)"><h1 style="color: white; text-align: center">Titulo de página</h1></div>
+        <div style="width:700px; height:500px; background-color: grey">
+            <div style="width:650px; height:100px; background-color: green; "><h1 style="color: white; text-align: center">1</h1></div>
+            <div style="width:650px; height:100px; background-color: green"><h1 style="color: white; text-align: center">2</h1></div>
+            <div style="width:650px; height:100px; background-color: green"><h1 style="color: white; text-align: center">3</h1></div>
+            <div style="width:650px; height:100px; background-color: green"><h1 style="color: white; text-align: center">4</h1></div>
+        </div>
+
+
+    </p>
+    
+</body>
+</html>
