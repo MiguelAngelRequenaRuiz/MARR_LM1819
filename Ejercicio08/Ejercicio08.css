@@ -60,13 +60,23 @@
 #a92{
     padding-top: 20px; 
     padding-bottom: 20px;
-    color: gray
+    color: rgba(102, 126, 106, 0.712)
 }
 
 #a93{
-    height: 300px;
+    height: 500px;
     background: rgba(161, 48, 6, 0.548); 
-    border-radius: 10px 
+    border-radius: 10px ;
+}
+
+#a94{
+    color: rgba(104, 28, 1, 0.445);
+    background: rgba(252, 70, 4, 0.26);
+    padding: 10px
+}
+
+#a95{
+    color: gray
 }
 
 #a10{
@@ -83,4 +93,56 @@ p{
     padding-top: 20px; 
     padding-bottom: 20px;
     color: rgba(104, 28, 1, 0.445)
+}
+
+#a1011{
+    background:rgba(160, 153, 168, 0.767); 
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 1px rgba(122, 115, 129, 0.377) solid
+}
+
+#a101{
+    padding: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px rgba(122, 115, 129, 0.377) solid
+}
+
+#a1012{
+    position: relative;
+    top: 20px;
+    background:rgba(160, 153, 168, 0.767); 
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 1px rgba(122, 115, 129, 0.377) solid
+}
+
+#a102{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px rgba(122, 115, 129, 0.377) solid;
+    position: relative;
+    top: 20px;
+}
+
+#a1013{
+    position: relative;
+    top: 40px;
+    background:rgba(160, 153, 168, 0.767); 
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 1px rgba(122, 115, 129, 0.377) solid
+}
+
+#a103{
+    position: relative;
+    top: 40px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px rgba(122, 115, 129, 0.377) solid;
+    padding-left: 20px
 }
