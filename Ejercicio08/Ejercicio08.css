@@ -38,7 +38,7 @@
     border: solid 1px gray
 }
 #a8{
-    height: 600px;
+    height: 900px;
     background: rgb(245, 245, 164)
 }
 #a9{
@@ -47,8 +47,26 @@
     left: 20px; 
     float:left; 
     background:rgba(252, 70, 4, 0.445); 
-    height:500px; 
-    width: 700px
+    height:750px; 
+    width: 1000px
+}
+
+#a91{
+    padding:10px;
+    background: rgba(252, 70, 4, 0.26);
+    color: grey
+}
+
+#a92{
+    padding-top: 20px; 
+    padding-bottom: 20px;
+    color: gray
+}
+
+#a93{
+    height: 300px;
+    background: rgba(161, 48, 6, 0.548); 
+    border-radius: 10px 
 }
 
 #a10{
@@ -56,13 +74,13 @@
     top: 20px;
     left: 45px; 
     float:left ; 
-    background:gray; 
-    height:500px; 
+    background:rgb(196, 186, 207); 
+    height:750px; 
     width: 300px
 }
 
-#a91{
-    padding:10px;
-    background: rgba(252, 70, 4, 0.26);
-    color: grey
+p{
+    padding-top: 20px; 
+    padding-bottom: 20px;
+    color: rgba(104, 28, 1, 0.445)
 }
