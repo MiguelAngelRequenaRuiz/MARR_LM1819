@@ -3,45 +3,45 @@
     padding: 0px
 }
 
-#a1{
+#Cabecera{
     height: 120px;
    background: rgba(0, 128, 0, 0.432) 
 }
 
-#a2{
+#TituloLetra{
     color: red;
 }
 
-#a3{
+#SubtituloLetra{
     color: green
 }
 
-#a4{
+#Niño{
    padding-top: 20px;
    padding-left: 20px;
 }
 
-#a5{
+#Titulo{
     padding-top: 5px;
     padding-left: 20px 
  }
  
-#a6{
+#Menus{
     float: left;
     padding: 10px;
     border-right: solid 1px gray;
     background: skyblue
 }
-#a7{
+#Menu{
     height: 38px;
     background: skyblue;
     border: solid 1px gray
 }
-#a8{
+#ColorFondo{
     height: 900px;
     background: rgb(245, 245, 164)
 }
-#a9{
+#BloqueIz{
     position:relative; 
     top: 20px;
     left: 20px; 
@@ -51,35 +51,35 @@
     width: 1000px
 }
 
-#a91{
+#BloqueIzSeccion{
     padding:10px;
     background: rgba(252, 70, 4, 0.26);
     color: grey
 }
 
-#a92{
+#BloqueIzTitulo{
     padding-top: 20px; 
     padding-bottom: 20px;
     color: rgba(102, 126, 106, 0.712)
 }
 
-#a93{
+#BloqueIzCapaVacia{
     height: 500px;
     background: rgba(161, 48, 6, 0.548); 
     border-radius: 10px ;
 }
 
-#a94{
+#BloqueIzPie{
     color: rgba(104, 28, 1, 0.445);
     background: rgba(252, 70, 4, 0.26);
     padding: 10px
 }
 
-#a95{
+#BloqueIzPieColorSeguridad{
     color: gray
 }
 
-#a10{
+#BloqueDer{
     position:relative; 
     top: 20px;
     left: 45px; 
@@ -95,7 +95,7 @@ p{
     color: rgba(104, 28, 1, 0.445)
 }
 
-#a1011{
+#BloqueDerTitulo1{
     background:rgba(160, 153, 168, 0.767); 
     padding: 10px;
     border-top-left-radius: 5px;
@@ -103,14 +103,14 @@ p{
     border: 1px rgba(122, 115, 129, 0.377) solid
 }
 
-#a101{
-    padding: 20px;
+#BloqueDerContenido1{
+    padding: 5px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border: 1px rgba(122, 115, 129, 0.377) solid
 }
 
-#a1012{
+#BloqueDerTitulo2{
     position: relative;
     top: 20px;
     background:rgba(160, 153, 168, 0.767); 
@@ -120,7 +120,7 @@ p{
     border: 1px rgba(122, 115, 129, 0.377) solid
 }
 
-#a102{
+#BloqueDerContenido2{
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border: 1px rgba(122, 115, 129, 0.377) solid;
@@ -128,7 +128,7 @@ p{
     top: 20px;
 }
 
-#a1013{
+#BloqueDerTitulo3{
     position: relative;
     top: 40px;
     background:rgba(160, 153, 168, 0.767); 
@@ -138,11 +138,14 @@ p{
     border: 1px rgba(122, 115, 129, 0.377) solid
 }
 
-#a103{
+#BloqueDerContenido3{
     position: relative;
     top: 40px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border: 1px rgba(122, 115, 129, 0.377) solid;
     padding-left: 20px;
+}
+#BloqueDerContenido3ColorLetra{
+    color: blue
 }
