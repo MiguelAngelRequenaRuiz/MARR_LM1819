@@ -26,17 +26,21 @@
     padding-left: 20px 
  }
  
-#Menus{
-    float: left;
+#Menu{
+    background: skyblue;
+    border-top: solid 1px gray;
+    border-bottom: solid 1px gray
+}
+
+#Menu li{
+    display: inline-block;
+    list-style: none;
     padding: 10px;
     border-right: solid 1px gray;
-    background: skyblue
-}
-#Menu{
-    height: 38px;
     background: skyblue;
-    border: solid 1px gray
+    color: blue
 }
+
 #ColorFondo{
     height: 900px;
     background: rgb(245, 245, 164)
