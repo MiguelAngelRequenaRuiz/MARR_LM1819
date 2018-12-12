@@ -1,50 +1,54 @@
-a, p{
+a, p{                   /* a y p  */
     font-size: 18px;
 }
 
-div a {
+div a {                 /* Todos los enlaces que esten dentro de una capa */
     color: red
 }
 
-div#capa1 {
+div#capa1 {             /* todos los div con id capa1 */
     background: blue
 }
 
-.letraGrande {
+.letraGrande {          
     font-size: 22px
 }
 
-.noSubrayado {
+.noSubrayado {          /* Se utiliza  el . para hacer referencia a las clases */
     text-decoration: none
 }
 
-div#capa1 a.encima:hover {
+div#capa1 a.encima:hover {   /* es un div en el que haya una "a" con clase "encima" que se activa cuando se pase el raton por encima(hover) */
     background: green
 }
-p#miparrafo:first-letter {
+p#miparrafo:first-letter {   /* aplica al párrafo con id "miparrafo" que ocurra algo con la primera letra */
     color: blueviolet;
     font-size: 30px
 }
 
-div#capa1 * {
+div#capa1 * {                           /*  * selecciona todos los  elementos que esten dentro de la capa seleccionada  */
     background: yellow
 }
 
-div > a {
+div > a {                                   /* Todos los enlaces que esten dentro de una capa y que sean sus hijos */
     font-style: italic
 }
 
-div.capa2 {
+div.capa2 {                                 /* Aplica el class solo a los div que lo contengan */
     border: 1px solid black
 }
 
-a[href^="https"] {
+a[href^="https"] {                      /* aplica a los enlaces que empiecen por https */
     color: green
 }
-a[href$="pdf"] {
+a[href$="pdf"] {                        /* se aplica a todos los que acaben en pdf */
     color: red
 }
 
-p[align="center"] {
+p[align="center"] {                     /* solo se aplica a parrafos con alineacion centrada */
 background: blue
+}
+
+div + p {                               /* se aplica al párrafo que vaya detras de un div */
+    font-size: 50px
 }
