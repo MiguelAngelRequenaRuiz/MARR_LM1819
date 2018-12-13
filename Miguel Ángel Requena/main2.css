@@ -1,0 +1,27 @@
+p, span, h1 {
+    font-weight: bolder;
+}
+
+div#primera {
+    background: blue;
+}
+
+div#capa p{
+    font-style: italic
+}
+
+div#capa p.bloque:hover {
+    font-size: 50px;
+}
+
+div#capa + p:first-letter {
+    font-size: 100px;
+}
+
+div#capa2 a[href$=".com"] {
+    text-decoration: none
+}
+
+div#capa2 a[href^="https"] {
+    color: red
+}

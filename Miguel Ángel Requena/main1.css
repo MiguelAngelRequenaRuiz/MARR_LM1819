@@ -1,0 +1,114 @@
+* {
+    margin: 0px;
+    padding: 0px     
+}
+
+
+header, section, footer, aside, nav, article{
+    display: block;
+}
+
+
+#contenedor {
+    width: 1000px;
+    margin: 15px auto;
+    text-align: left;
+}
+
+
+#cabecera {
+    padding: 15px;
+}
+
+span#suscribete {
+    text-align: left;
+    color: gray
+}
+
+header#cabecera h1 {
+    text-align: center
+}
+
+input {
+    position: relative;
+    left: 700px;
+}
+
+#menu {
+    border-top: 1px solid gray;
+    padding: 10px;
+}
+
+#menu li {
+    display: inline-block ;          
+    list-style: none;
+    padding: 10px;
+    color: gray
+}
+
+#entrar {
+    padding: 20px
+}
+
+div#cabecera2 {
+    height: 250px;
+    background: rgb(41, 41, 41);
+    color: white
+}
+
+div#cabecera2 h1{
+    padding: 15px;
+    width: 300px
+}
+
+div#cabecera2 p{
+    padding: 15px;
+    width: 300px
+}
+
+div#cabecera2 footer{
+    padding: 10px;
+    font-weight: bolder
+}
+
+.divarticle {
+    float: left;
+    text-align: left;
+    width: 280px
+}
+
+.columna {
+    float: left;
+    background: grey;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: white
+}
+
+#izquierda {
+    float: left;            
+
+    margin: 15px;
+}
+
+#derecha {
+    float: left;            
+
+    margin: 15px;
+}
+
+article {
+    border: 1px solid gray
+}
+
+article footer {
+    text-align: center
+}
+#pie {
+    clear: both;            
+    text-align: center;
+    border-top: 2px solid gray 
+}
+
