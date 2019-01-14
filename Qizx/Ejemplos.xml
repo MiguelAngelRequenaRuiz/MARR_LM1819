@@ -1,0 +1,69 @@
+
+
+<html>
+<body>
+<h1>Bailes ofertados</h1>
+<table style="border:1px solid black">
+<tr>
+	<th>Nombre</th>
+	<th>Profesor</th>
+	<th>Plazas</th>
+</tr>
+{
+for $baile in //Bailes/baile 
+let $nombre:=$baile/nombre
+let $profesor:=$baile/profesor
+let $plazas:=$baile/plazas
+where $baile/precio[@cuota="trimestral"] 	<!-- ordenar-->
+order by $baile/plazas ascending
+return
+	<tr>
+	<td>{data($nombre)}</td>
+	<td>{data($profesor)}</td>
+	<td>{data($plazas)}</td>
+	</tr>
+}
+</table>
+</body>
+</html>
+
+<!--Insertar nodo-->
+insert node
+<baile id="7">
+<nombre>Foxtrot</nombre>
+<precio cuota="mensual" moneda="dolares">22</precio>
+<plazas>12</plazas>
+<comienzo>01/01/2020</comienzo>
+<fin>01/03/2020</fin>
+<profesor>Freddy</profesor>
+<sala>3</sala>
+</baile>
+before //Bailes/baile[1]
+
+<!--Actualizar campos de un nodo-->
+replace value of node //Bailes/baile[1]/profesor
+with "Profe"
+,
+replace value of node //Bailes/baile[1]/plazas
+with 200
+
+-------------------------------------------------------------
+replace value of node //Bailes/baile[@id=6]/profesor
+with "Profeeeeee"
+,
+replace value of node //Bailes/baile[@id=6]/plazas
+with 200000
+
+<!--Borrar nodo-->
+delete node //Bailes/baile[@id=7]
+
+<!--Enlace Cruzado-->
+
+for $t in doc("Biblioteca.xml")//libro, 
+$e in doc("Prestamos.xml")//entrada
+where $t/titulo = $e/titulo
+order by $e//prestamo/inicio
+return
+	<prestamo>
+	{$t/titulo, $t/autor/*, $e/prestamo/inicio, $e/prestamo/devolución}
+	</prestamo>
