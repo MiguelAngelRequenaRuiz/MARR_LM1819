@@ -117,10 +117,70 @@ return
   <maximo>{$maximo}</maximo>
 </precio>
 	<!-- Mostrar el título y el número de autores que tiene cada libro en etiquetas diferentes-->
-let $autores :=count(//bookstore/book/author)
-for $titulos in //bookstore/book/title/text()
+for $titulos in //bookstore/book
+let $autores := count($titulos/author/text())
 return
 <libro>
-<titulo>{$titulos}</titulo>
+<titulo>{$titulos/title/text()}</titulo>
 <Número_de_autores>{$autores}</Número_de_autores> </libro>
 	<!-- Mostrar cada uno de los precios de los libros, y al final una nueva etiqueta con la suma de los precios (Función sum())-->
+let $suma := sum(//bookstore/book/price), $precio := (
+for $libro in //bookstore/book/price
+return <precio>{$libro/text()}</precio>)
+return 
+   <resultado>
+     {$precio}
+     <suma>{$suma}</suma>
+   </resultado>
+
+<!--Segunda forma-->
+
+let $precios := //bookstore/book/price,
+$sumaprecios := sum($precios)
+return
+  <listaprecios>
+    {$precios}
+    <suma>{$sumaprecios}</suma>
+  </listaprecios>
+
+	<!--Mostrar en la misma etiqueta el titulo y entre parentesis el numero de autores -->
+for $titulo in //bookstore/book
+let $titulos := $titulo/title/text(),
+$num_autores := count($titulo/author)
+return
+<libro>{$titulos}, ({$num_autores})</libro>
+	<!--Mostrar los libros escritos en años que terminen en 3-->
+for $titulo in //bookstore/book
+where ends-with($titulo/year, "3")
+return
+$titulo/title/text()
+	<!--Mostrar los libros cuya categoria empieze por "C" 
+	y que tengan una "p" mayuscula o minuscula en el titulo -->
+for $libro in //bookstore/book
+where starts-with($libro/@category, "C") 
+and contains($libro/title, "p")
+or contains($libro/title, "P")
+return
+$libro
+	<!--Mostrar el titulo y el numero de caracteres que tiene cada titulo (string-length())-->
+for $libro in //bookstore/book/title
+let $num := $libro/string-length($libro)
+return
+<libro>
+<titulo>{$libro/text()}</titulo>
+<caracteres>{$num}</caracteres>
+</libro>
+	<!--Mostrar todos los años en los que se ha publicado 
+	un libro eliminando los repetidos (distinct-values)-->
+for $libro in //bookstore/book/year
+where distinct-values($libro)
+return
+$libro
+	<!--Mostrar los títulos en una tabla html-->
+for $libro in //bookstore/book/title/text()
+return
+<html style="border:2px solid black">
+<body>
+<p>$libro</p>
+</body>
+</html>
