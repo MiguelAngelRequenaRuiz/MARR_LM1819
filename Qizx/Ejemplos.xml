@@ -1,3 +1,9 @@
+<!--Busca libro de menos de 200 paginas -->
+for $libro in //Libros/libro
+where $libro/NumPaginas<200
+return
+$libro/Autores
+
 <html>
 <body>
 <h1>Bailes ofertados</h1>
@@ -41,7 +47,7 @@ before //Bailes/baile[1]
 <!--Actualizar campos de un nodo-->
 replace value of node //Bailes/baile[1]/profesor
 with "Profe"
-,
+, <!-- La , se usa para separar actualizaciones-->
 replace value of node //Bailes/baile[1]/plazas
 with 200
 
@@ -170,15 +176,88 @@ return
 </libro>
 	<!--Mostrar todos los años en los que se ha publicado 
 	un libro eliminando los repetidos (distinct-values)-->
-for $libro in //bookstore/book/year
-where distinct-values($libro)
+for $libro in distinct-values(//bookstore/book/year)
 return
-$libro
+<año>{$libro}</año>
 	<!--Mostrar los títulos en una tabla html-->
-for $libro in //bookstore/book/title/text()
-return
-<html style="border:2px solid black">
+<html>
 <body>
-<p>$libro</p>
+<h1>Titulos de libros</h1>
+<table style="border:1px solid black">
+<tr>
+  <th>Titulos</th>
+</tr>
+{
+for $titulo in //bookstore/book/title/text()
+return
+  <tr>
+  <td>{data($titulo)}</td>
+  </tr>
+}
+</table>
 </body>
 </html>
+
+
+<!--con el comando for se muestra el resultado de cada tabla-->
+for $titulo in //bib/libro/titulo
+return
+<titulos>{ $titulo }</titulos>
+<!--El resultado de esta consulta se muestra a continuación:-->
+<titulos>
+<titulo>TCP/IP Illustrated</titulo>
+</titulos>
+<titulos>
+<titulo>Advan Programming for Unix environment</titulo>
+</titulos>
+<titulos>
+<titulo>Data on the Web</titulo>
+</titulos>
+<titulos>
+<titulo> Economics of Technology for Digital TV</titulo>
+</titulos>
+<!--con el comando let se muestra el resultado tota-->
+let $titulo := //bib/libro/titulo
+return
+<titulos>{ $titulo }</titulos>
+<!--El resultado de esta consulta se muestra a continuación:-->
+<titulos>
+<titulo>TCP/IP Illustrated</titulo>
+<titulo>Advan Programming for Unix environment</titulo>
+<titulo>Data on the Web</titulo>
+<titulo> Economics of Technology for Digital TV</titulo>
+</titulos>
+
+<!--Es decir, con el comando for se muestra el resultado de cada 
+tabla y con el comando let se muestra el resultado total-->
+
+<!--Si hay un for y luego un let el resultado se añade a cada tabla-->
+
+<!--solo pueden haber una única cláusula where(aunque podemos añadir AND y OR)
+una única cláusula order by y una única cláusula return.-->
+
+<!--Matemáticos: +, -, *, div(*), idiv(*), mod.
+Comparación: =, !=, <, >, <=, >=, not()
+Secuencia: union (|), intersect, except
+Redondeo: floor(), ceiling(), round().
+Funciones de agrupación: count(), min(), max(), avg(), sum().
+
+Funciones de cadena: concat(), string-length(), starts-with(), 
+ends-with(), substring(), upper-case(), lower-case(), string()
+
+Uso general: distinct-values(), empty(), exits()-->
+
+
+<!-- ALGUNOS EJEMPLOS
+distinct-values()
+	for $l in distinct-values(//autor/apellidos)
+
+empty()  DEVUELVE LA TABLA CUANDO NO TENGA ESE ELEMENTO
+	for $b in //libro
+	where (empty($b/autor))
+
+exist()  DEVUELVE LA TABLA CUANDO TENGA ESE ELEMENTO
+	for $b in doc("libros.xml")//libro
+	where exists($b/autor)
+
+-->
