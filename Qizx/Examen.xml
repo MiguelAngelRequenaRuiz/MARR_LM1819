@@ -1,0 +1,145 @@
+-------------------------------------------------------
+1.Obtener los pedidos de los usuarios cuya cantidad sea mayor que 10,
+ ordenados por fecha del pedido. Mostrar el login, nombre, descripción, 
+ cantidad y fecha. 
+-------------------------------------------------------
+for $usu in doc("usuarios.xml")//usuarios/usuario,
+$ped in doc("pedidos.xml")//pedidos/pedido
+where $ped/cantidad>10
+let $login := $usu/login/text()
+let $nombre := $usu/nombre/text()
+let $descrip := $ped/descripcion/text()
+let $cant := $ped/cantidad/text()
+let $fecha := $ped/fecha/text()
+order by $ped//fecha
+return
+<pedidos>
+  <login>{$login}</login>
+  <nombre>{$nombre}</nombre>
+  <descripcion>{$descrip}</descripcion>
+  <cantidad>{$cant}</cantidad>
+  <fecha>{$fecha}</fecha>
+</pedidos>
+-----------------------------------------------------------
+2.Mostrar los pedidos cuya cantidad sea menor o igual que 20. 
+  Mostrar sólo la descripción, tipo y cantidad.
+-----------------------------------------------------------
+for $ped in doc("pedidos.xml")//pedidos/pedido
+where $ped/cantidad<=20
+let $descrip := $ped/descripcion/text()
+let $tipo := $ped/tipo/text()
+let $cant := $ped/cantidad/text()
+return
+<pedidos>
+  <descripcion>{$descrip}</descripcion>
+  <cantidad>{$cant}</cantidad>
+  <tipo>{$tipo}</tipo>
+</pedidos>
+-----------------------------------------------------------
+3.Mostrar todos los pedidos del usuario con id 1 que estén pagados y sean del tipo A. 
+  Mostrar el login del usuario, la descripción y la fecha del pedido.
+-----------------------------------------------------------
+for $usu in doc("usuarios.xml")//usuarios/usuario,
+$ped in doc("pedidos.xml")//pedidos/pedido
+where $usu/id = 1 and $ped/usuario = 1 and $ped/pagado = "S" and $ped/tipo = "A"
+let $login := $usu/login/text()
+let $descrip := $ped/descripcion/text()
+let $fecha := $ped/fecha/text()
+return
+<pedidos>
+  <login>{$login}</login>
+  <descripcion>{$descrip}</descripcion>
+  <fecha>{$fecha}</fecha>
+</pedidos>
+-----------------------------------------------------------
+4.Mostrar la cantidad total de los pedidos. Etiquetarla como “cantidadTotal”.
+-----------------------------------------------------------
+let $cuantos :=count(//pedidos/pedido)
+return <cantidadTotal>{$cuantos}</cantidadTotal>
+-----------------------------------------------------------
+5.Mostrar la cantidad máxima y mínima de los pedidos.
+-----------------------------------------------------------
+let $minimo :=min(//pedidos/pedido/cantidad)
+let $maximo :=max(//pedidos/pedido/cantidad)
+return 
+<cantidad>
+  <minimo>{$minimo}</minimo>
+  <maximo>{$maximo}</maximo>
+</cantidad>
+-----------------------------------------------------------
+6.Mostrar todos los pedidos del 10/01/2019. Muestre la descripción, fecha y cantidad.
+-----------------------------------------------------------
+for $ped in doc("pedidos.xml")//pedidos/pedido
+where $ped/fecha="10/01/2019"
+let $descrip := $ped/descripcion/text()
+let $fecha := $ped/fecha/text()
+let $cant := $ped/cantidad/text()
+return
+<pedidos>
+  <descripcion>{$descrip}</descripcion>
+  <fecha>{$fecha}</fecha>
+  <cantidad>{$cant}</cantidad>
+</pedidos>
+-----------------------------------------------------------
+7.Mostrar todos los usuarios que tienen cuenta de correo en gmail.
+-----------------------------------------------------------
+for $usu in doc("usuarios.xml")//usuarios/usuario
+where ends-with($usu/email, "@gmail.com")
+return
+$usu
+-----------------------------------------------------------
+8.Genera una página html con una tabla con los pedidos pagados.
+-----------------------------------------------------------
+<html>
+<body>
+<h1>Pedidos pagados</h1>
+<table style="border:1px solid black">
+<tr>
+  <th>Descripcion</th>
+  <th>Fecha</th>
+  <th>Cantidad</th>
+  <th>Tipo</th>
+  <th>Pagado</th>
+  <th>Usuario</th>
+</tr>
+{
+for $ped in doc("pedidos.xml")//pedidos/pedido
+where $ped/pagado = "S"
+let $descrip := $ped/descripcion/text()
+let $fecha := $ped/fecha/text()
+let $cant := $ped/cantidad/text()
+let $tipo := $ped/tipo/text()
+let $pagado := $ped/pagado/text()
+let $usuario := $ped/usuario/text()
+
+return
+  <tr>
+  <td>{data($descrip)}</td>
+  <td>{data($fecha)}</td>
+  <td>{data($cant)}</td>  
+  <td>{data($tipo)}</td>
+  <td>{data($pagado)}</td>
+  <td>{data($usuario)}</td>
+  </tr>
+}
+</table>
+</body>
+</html>
+-----------------------------------------------------------
+9.Inserta un nuevo usuario con los datos que estimes oportunos.
+-----------------------------------------------------------
+insert node
+<usuario>
+    	<id>4</id>
+	<login>Miguel Angel</login>
+	<password>1234</password>
+	<home_dir>/home/migue</home_dir>
+    	<nombre>Miguel Angel Requena Ruiz</nombre>
+    	<email>migue@gmail.com</email>
+</usuario>
+after //usuarios/usuario[3]
+-----------------------------------------------------------
+10.Actualiza el pedido con código 6 a pagado. 
+-----------------------------------------------------------
+replace value of node //pedidos/pedido[@cod=6]/pagado
+with "S"
