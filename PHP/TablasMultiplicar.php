@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,16 +8,12 @@
 
 </head>
 <body>
-    <?php
-    $a=0;
-    $b=0;
-    while ($a <= 10); do{
-        $a=$a + 1 ;
-        $b=$b + 1 ;
-        $r=$b * $a ;
-        echo "$b x $a = $r";
-    }
-    T_while;
-    ?>
+<?php
+$fechaInicio=strtotime("1-m-y");
+$fechaFin=strtotime("d-m-y");
+for($i=$fechaInicio; $i<=$fechaFin; $i+=86400){
+echo date("d-m-Y", $i)."<br>";
+}
+?>
 </body>
 </html>
