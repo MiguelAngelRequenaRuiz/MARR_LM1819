@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Formulario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <form action="ejercicio1.php" enctype="multipart/form-data" method="POST">
+        <p><label>Email: </label><input type="text" name="email" id="email"/></p>
+        <p><label>Confirmacion: </label><input type="text" name="confirmacion" id="confirmacion"/></p>
+        <p><label>Desea recibir noticias: </label><select name="seleccion[]" id="2" >
+            <option value="Si">Si</option>
+            <option value="no">No</option>
+            <option value="Nada"></option>
+        </select></p>
+        <p><input type="submit" value="enviar"></p>
+    </form>
+</body>
+</html>

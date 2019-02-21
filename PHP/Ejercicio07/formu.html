@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <!--
+        Realice un formulario que introduzca dos valores (pies y pulgadas) y los convierta a centímetros. 
+        Los pies deben ser un número entero mayor o igual que cero. Las pulgadas son un número entero o 
+        decimal mayor o igual que cero. Un pie son doce pulgadas y una pulgada son 2,54 cm.
+    -->
+    <form action="formu.php" enctype="multipart/form-data" method="POST">
+        <p><label>Pulgadas: </label><input type="text" name="pulgadas" id="pulgadas"></p>
+        <p><label>Pies: </label><input type="text" name="pies" id="pies"></p>
+        <p><input type="submit" value="Convertir"></p>
+    </form>
+</body>
+</html>

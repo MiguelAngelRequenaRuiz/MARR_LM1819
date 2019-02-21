@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Temperaturas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!--
+        Realice un formulario para solicitar una temperatura y un desplegable que indique que tipo de 
+        temperatura es, con las opciones “Celsius” o “Fahrenheit”. Al pulsar el botón convertir convertirá 
+        la temperatura en la otra unidad. Deben ser valores decimales, no puede ser inferior a -273,15 ºC 
+        o -459,67 ºF. Para obtener el resultado despejar la siguiente fórmula “F - 32 = 1,8 * C”. Presentar 
+        el resultado con 2 decimales.
+    -->
+    <form action="conver_temperatura.php" method="post">
+            <p>
+            <label for="Temp">Temperatura: </label>
+            <input type="number" name="temp" id="temp">
+            <select name="seleccion[]" id="unidad">
+                <option value="c">Celsius</option>
+                <option value="f">Fahrenheit</option>
+            </select>
+            </p>
+            <p><input type="submit" value="Convertir"></p>
+        </form>
+</body>
+</html>
