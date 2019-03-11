@@ -8,13 +8,14 @@
 </head>
 <body>
     <?php
-        $conexion = mysqli_connect("localhost", "root", "cursophp") or die("Problemas de conexión");
+        $conexion = mysqli_connect("localhost", "root", "", "cursophp") or die("Problemas de conexión");
 
-        $registros = mysqli_query($conexión, "SELECT idAlumno, nombre, mail, codigocurso FROM alumnos") or die("Problemas en la consulta: ". mysqli_error($conexion))
+        $registros = mysqli_query($conexion, "SELECT idAlumno, nombre, mail, codigocurso FROM alumnos") 
+        or die("Problemas en la consulta: ". mysqli_error($conexion));
 
         while ($reg=mysqli_fetch_array($registros)) {
-            echo "IdAlumno: " . $reg['idAlumno'] "<br/>";
-            echo "IdAlumno: " . $reg['nombre'] "<br/>";
+            echo "IdAlumno: " . $reg['idAlumno'] . "<br>";
+            echo "nombre: " . $reg['nombre'] . "<br>";
         }
         mysqli_close($conexion);
     ?>
