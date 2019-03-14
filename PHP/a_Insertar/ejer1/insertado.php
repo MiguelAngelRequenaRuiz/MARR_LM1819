@@ -13,28 +13,22 @@
     </head>
     <body>
         <div class="container">
-            <h2>Insertar Alumno</h2>
-            <form action="insertar.php" method="post">
-                <div class="form-group">
-                    <label for="nombre">Nombre Alumno</label>
-                    <input type="text" class="form-control" name="nombre" id="nombre" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Alumno</label>
-                    <input type="email" class="form-control" name="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="curso">Curso Alumno</label>
-                    <select name="curso" class="form-control" >
-                        <option value="1">PHP</option>
-                        <option value="2">ASP</option>
-                        <option value="3">JSP</option>
-                    </select>
-                </div>
-                <p>
-                    <input type="submit" class="btn btn-primary btn-block" value="Insertar">
-                </p>
-            </form>
+            <?php
+                $descripcion = trim(htmlspecialchars($_REQUEST["descripcion"], ENT_QUOTES, "UTF-8"));
+                $cantidad = trim(htmlspecialchars($_REQUEST["cantidad"], ENT_QUOTES, "UTF-8"));
+                $precio = trim(htmlspecialchars($_REQUEST["precio"], ENT_QUOTES, "UTF-8"));
+                $proveedor = trim(htmlspecialchars($_REQUEST["nombre"], ENT_QUOTES, "UTF-8"));
+
+                $conexion = mysqli_connect("localhost", "root", "", "bdejemplo")
+                    or die("Problemas de conexión");
+
+                mysqli_query($conexion, "INSERT INTO productos(descripcion, cantidad, precio) VALUES('$nombre','$email',$curso)")
+                or die("Problemas en el insert".mysqli_error($conexion));
+
+                mysqli_close($conexion);
+
+                print "<h2>Nuevo producto añadido</h2>";
+            ?>
         </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

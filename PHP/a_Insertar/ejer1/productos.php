@@ -13,26 +13,36 @@
     </head>
     <body>
         <div class="container">
-            <h2>Insertar Alumno</h2>
+            <h2>Productos</h2>
+            <?php
+            $conexion = mysqli_connect("localhost", "root", "", "bdejemplo")
+            or die("Problemas con la conexión");
+            
+            $registros = mysqli_query($conexion, 
+            "SELECT prod.idProductos, prod.descripcion, prod.cantidad, prod.precio, prod.idProveedor, prov.nombre
+            from productos AS prod INNER JOIN proveedores AS prov ON prod.idProveedor = prov.idProveedor ") or die("Problemas en la consulta:".mysqli_error($conexion));
+           
+           
+           while ($reg = mysqli_fetch_array($registros)) {
+                echo "<table class='table table-striped'>";
+                echo "<tr>  <th>IdProductos</th>   <th>Descripcion</th>     <th>Cantidad</th>      <th>Precio</th> <th>IdProveedor</th> <th>Nombre</th> </tr>";
+                echo "<tr>";
+                echo "<td>" .$reg['idProductos'] . "</td>";
+                echo "<td>" .$reg['descripcion'] . "</td>";
+                echo "<td>" .$reg['cantidad'] . "</td>";
+                echo "<td>" .$reg['precio'] . "</td>";
+                echo "<td>" .$reg['idProveedor'] . "</td>";
+                echo "<td>" .$reg['nombre'] . "</td>";
+                echo "</tr>";
+                echo "</table>";
+            } 
+            mysqli_close($conexion);
+            
+
+        ?>
             <form action="insertar.php" method="post">
-                <div class="form-group">
-                    <label for="nombre">Nombre Alumno</label>
-                    <input type="text" class="form-control" name="nombre" id="nombre" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Alumno</label>
-                    <input type="email" class="form-control" name="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="curso">Curso Alumno</label>
-                    <select name="curso" class="form-control" >
-                        <option value="1">PHP</option>
-                        <option value="2">ASP</option>
-                        <option value="3">JSP</option>
-                    </select>
-                </div>
                 <p>
-                    <input type="submit" class="btn btn-primary btn-block" value="Insertar">
+                    <input type="submit" class="btn btn-primary btn-block" value="Insertar nuevo producto">
                 </p>
             </form>
         </div>
