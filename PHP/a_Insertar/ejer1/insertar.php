@@ -47,8 +47,8 @@
                     <label for="precio">Precio</label>
                     <input type="text" class="form-control" name="precio" id="precio" required>
                 </div>
-                    <label for="curso">Proveedor</label>
-                    <select name="curso" class="form-control" >
+                    <label for="proveedor">Proveedor</label>
+                    <select name="proveedor" class="form-control" >
                         <?php
                         $conexion = mysqli_connect("localhost", "root", "", "bdejemplo")
                         or die("Problemas de conexión");

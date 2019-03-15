@@ -22,7 +22,10 @@
                 $conexion = mysqli_connect("localhost", "root", "", "bdejemplo")
                     or die("Problemas de conexión");
 
-                mysqli_query($conexion, "INSERT INTO productos(descripcion, cantidad, precio) VALUES('$nombre','$email',$curso)")
+                mysqli_query($conexion, "INSERT INTO productos(descripcion, cantidad, precio) VALUES('$descripcion','$cantidad','$precio')")
+                or die("Problemas en el insert".mysqli_error($conexion));
+
+                mysqli_query($conexion, "INSERT INTO productos(descripcion, cantidad, precio) VALUES('$descripcion','$cantidad','$precio')")
                 or die("Problemas en el insert".mysqli_error($conexion));
 
                 mysqli_close($conexion);

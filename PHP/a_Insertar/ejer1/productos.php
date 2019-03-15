@@ -19,25 +19,39 @@
             or die("Problemas con la conexión");
             
             $registros = mysqli_query($conexion, 
-            "SELECT prod.idProductos, prod.descripcion, prod.cantidad, prod.precio, prod.idProveedor, prov.nombre
+            "SELECT prod.descripcion, prod.cantidad, prod.precio, prod.idProveedor, prov.nombre
             from productos AS prod INNER JOIN proveedores AS prov ON prod.idProveedor = prov.idProveedor ") or die("Problemas en la consulta:".mysqli_error($conexion));
            
-           
+           echo "<table class='table table-striped'>";
+           echo "<tr>    <th>Producto</th>    <th>Precio</th> <th>Proveedor</th> </tr>";
            while ($reg = mysqli_fetch_array($registros)) {
-                echo "<table class='table table-striped'>";
-                echo "<tr>  <th>IdProductos</th>   <th>Descripcion</th>     <th>Cantidad</th>      <th>Precio</th> <th>IdProveedor</th> <th>Nombre</th> </tr>";
+
                 echo "<tr>";
-                echo "<td>" .$reg['idProductos'] . "</td>";
                 echo "<td>" .$reg['descripcion'] . "</td>";
-                echo "<td>" .$reg['cantidad'] . "</td>";
                 echo "<td>" .$reg['precio'] . "</td>";
-                echo "<td>" .$reg['idProveedor'] . "</td>";
                 echo "<td>" .$reg['nombre'] . "</td>";
                 echo "</tr>";
-                echo "</table>";
             } 
-            mysqli_close($conexion);
+            echo "</table>";
             
+           $registros2 = mysqli_query($conexion, 
+           "SELECT sum(cantidad) as Total, precio, cantidad
+           from productos") or die("Problemas en la consulta:".mysqli_error($conexion));
+          
+          
+          while ($reg = mysqli_fetch_array($registros2)) {
+               echo "<table class='table table-striped'>";
+               echo "<tr>    <th>Total de productos</th>    <th>Precio total</th> </tr>";
+               echo "<tr>";
+               echo "<td>" .$reg['cantidad'] . "</td>";
+               echo "<td>" .$reg['precio'] * $reg['cantidad']. "</td>";
+               echo "</tr>";
+               echo "</table>";
+           } 
+
+            mysqli_close($conexion);
+
+
 
         ?>
             <form action="insertar.php" method="post">
