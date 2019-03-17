@@ -14,24 +14,26 @@
     <body>
         <div class="container">
             <?php
-                $descripcion = trim(htmlspecialchars($_REQUEST["descripcion"], ENT_QUOTES, "UTF-8"));
-                $cantidad = trim(htmlspecialchars($_REQUEST["cantidad"], ENT_QUOTES, "UTF-8"));
-                $precio = trim(htmlspecialchars($_REQUEST["precio"], ENT_QUOTES, "UTF-8"));
-                $proveedor = trim(htmlspecialchars($_REQUEST["nombre"], ENT_QUOTES, "UTF-8"));
 
-                $conexion = mysqli_connect("localhost", "root", "", "bdejemplo")
-                    or die("Problemas de conexión");
+$descripcion = trim(htmlspecialchars($_REQUEST["descripcion"], ENT_QUOTES, "UTF-8"));
+$cantidad = trim(htmlspecialchars($_REQUEST["cantidad"], ENT_QUOTES, "UTF-8"));
+$precio = trim(htmlspecialchars($_REQUEST["precio"], ENT_QUOTES, "UTF-8"));
+$proveedor = trim(htmlspecialchars($_REQUEST["proveedor"], ENT_QUOTES, "UTF-8"));
 
-                mysqli_query($conexion, "INSERT INTO productos(descripcion, cantidad, precio) VALUES('$descripcion','$cantidad','$precio')")
-                or die("Problemas en el insert".mysqli_error($conexion));
+$conexion = mysqli_connect("localhost", "root", "", "bdejemplo")
+    or die("Problemas de conexión");
 
-                mysqli_query($conexion, "INSERT INTO productos(descripcion, cantidad, precio) VALUES('$descripcion','$cantidad','$precio')")
-                or die("Problemas en el insert".mysqli_error($conexion));
+mysqli_query($conexion, 
+"INSERT INTO productos(descripcion, cantidad, precio, idProveedor) VALUES('$descripcion','$cantidad','$precio', '$proveedor')")
+or die("Problemas en el insert".mysqli_error($conexion));
 
-                mysqli_close($conexion);
+mysqli_close($conexion);
 
                 print "<h2>Nuevo producto añadido</h2>";
+
+                
             ?>
+            <a href="productos.php">Volver</a>
         </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -47,4 +49,5 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
     </body>
+
 </html>

@@ -50,10 +50,8 @@
            } 
 
             mysqli_close($conexion);
-
-
-
         ?>
+
             <form action="insertar.php" method="post">
                 <p>
                     <input type="submit" class="btn btn-primary btn-block" value="Insertar nuevo producto">
@@ -73,5 +71,6 @@
             src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
+
     </body>
 </html>
