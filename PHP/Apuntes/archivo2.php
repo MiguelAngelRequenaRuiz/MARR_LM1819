@@ -15,7 +15,7 @@
             $conexion = mysqli_connect("localhost", "root", "", "bdejemplo")
                 or die("Problemas de conexión");
             mysqli_query($conexion,
-                "INSERT INTO productos(descripcion, cantidad, precio, idProveedor) VALUES ('$descripcion', $cantidad, $precio, $idProveedor)")
+                "INSERT INTO productos(descripcion, cantidad, precio, idProveedor) VALUES ('$descripcion', '$cantidad', '$precio', '$idProveedor')")
                 or die("Problemas en el insert". mysqli_error($conexion));
             mysqli_close($conexion);
             print "<h2>Producto añadido</h2>";
