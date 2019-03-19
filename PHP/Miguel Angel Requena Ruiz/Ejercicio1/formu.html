@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calcular</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>Calculadora de area y perimetro del rectangulo</h1>
+    <form action="calculo.php">
+        <p>
+            <label for="base">Base(cm): </label>
+            <input type="text" name="base" id="base"/>
+        </p>
+        <p>
+            <label for="altura">Altura(cm):</label>
+            <input type="text" name="altura" id="altura"/>
+        </p>
+        <p>
+            <input type="radio" name="perim" value="perim" >Perimetro 
+            <input type="radio" name="area" value="area">Area
+        </p>
+
+        <p>
+            <input type="submit" value="Calcular"/>
+        </p>
+    </form>
+</body>
+</html>
