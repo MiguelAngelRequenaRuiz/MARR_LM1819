@@ -19,9 +19,9 @@
   
         if ($IMC < 18.5) {
             $IMCresul = "bajo peso";
-        } else if ( $IMC > 18.5){
+        } else if (( $IMC > 18.5) && ( $IMC <= 25)) {
             $IMCresul = "peso normal";
-        }else if ( $IMC > 25){
+        }else if ( $IMC  25){
             $IMCresul = "sobrepeso";
         }else if ($IMC < 29.9){
             $IMCresul = "obesidad";
