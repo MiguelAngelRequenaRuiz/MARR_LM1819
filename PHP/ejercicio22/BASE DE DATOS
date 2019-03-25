@@ -1,0 +1,27 @@
+CREATE TABLE ubicaciones
+(
+	idUbicacion NUMBER(6) NOT NULL,
+	nombre VARCHAR2(20),
+	descripcion VARCHAR2(50),
+	localizacion VARCHAR2(150),
+	CONSTRAINT PK_ubicaciones PRIMARY KEY (idUbicacion)
+);
+
+COMMIT;
+
+CREATE TABLE PASAJEROS
+(
+	idOrdenador NUMBER(6) NOT NULL,
+	idUbicacion NUMBER(6) NOT NULL,
+	marca VARCHAR2(20),
+	procesador VARCHAR2(20),
+	memoria VARCHAR2(20),
+	precio VARCHAR2(20),
+	fechaCompra DATE,
+	perifericos BINARY(1)
+	CONSTRAINT PK_pasajeros PRIMARY KEY (idOrdenador),
+	CONSTRAINT FK_pasajeros FOREIGN KEY (idUbicacion) REFERENCES ubicaciones (idUbicacion) ON DELETE CASCADE;
+);
+
+
+
