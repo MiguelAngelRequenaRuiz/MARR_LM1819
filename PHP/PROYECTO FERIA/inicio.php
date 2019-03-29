@@ -18,12 +18,12 @@
 
                 <div class="form-group">
                     <label for="fecha_ini">Fecha desde</label>
-                    <input type="date" class="form-control" name="fecha_ini" id="fecha_ini">
+                    <input type="date" class="form-control" name="fecha_ini" id="fecha_ini" required>
                 </div>
 
                 <div class="form-group">
                         <label for="fecha_fin">Fecha hasta</label>
-                        <input type="date" class="form-control" name="fecha_fin" id="fecha_fin">
+                        <input type="date" class="form-control" name="fecha_fin" id="fecha_fin" required>
                 </div>
 
                 <div class="form-group">
