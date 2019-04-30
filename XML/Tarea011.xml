@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Crea un documento XML bien formado de un instituto que incluya estudiantes, profesores y trabajadores-->
+<instituto>
+
+<estudiantes>
+        <alumno>
+            <id_alumno>1</id_alumno>
+            <nombre>Pepe</nombre>
+            <apellido>Ruiz</apellido>
+            <curso>1º ASIR</curso>
+        </alumno>
+</estudiantes>
+
+<profesores>
+        <profesor>
+            <id_profesor>1</id_profesor>
+            <nombre>Juan</nombre>
+            <apellido>López</apellido>
+            <asignatura>Lengua</asignatura>
+        </profesor>
+</profesores>
+
+<trabajadores>
+        <trabajador>
+            <id_trabajador>1</id_trabajador>
+            <nombre>Carlos</nombre>
+            <apellido>Rojo</apellido>
+            <puesto>Mantenimiento</puesto>
+        </trabajador>
+</trabajadores>
+
+</instituto>
+
+<!--Crea un documento XML bien formado sobre una biblioteca. Debe contener atributos que permitan identificar 
+    el libro y que registren si están prestados o no.-->
+
+<biblioteca>
+
+        <libro>
+            <ISBN prestado="Si">1</ISBN>
+            <titulo>SUMISION</titulo>
+            <autor>MICHEL HOUELLEBECQ</autor>
+            <editorial>ANAGRAMA</editorial>
+        </libro>     
+
+        <libro>
+            <ISBN prestado="No">2</ISBN>
+            <titulo>ENSAYO SOBRE LA LUCIDEZ</titulo>
+            <autor>JOSE SARAMAGO</autor>
+            <editorial>DEBOLSILLO</editorial>
+        </libro>  
+
+</biblioteca>
+
+<!--Crea un documento XML bien formado que contenga elementos de 2 espacios de nombres distintos 
+    (librería y clientes). El xml debe registrar la compra de libros de un cliente-->
+    
+<cliente    xmlns:cli='http://Espacio_de_nombres_XML/cliente'
+            xmlns:lib='http://Espacio_de_nombres_XML/libreria'>
+
+        <cli:numero_ID>64644654</cli:numero_ID>
+        <cli:nombre>Pepe Chavez</cli:nombre>
+        <cli:telefono>66677666</cli:telefono>
+        <lib:compra>
+            <lib:ISBN>34253535</lib:ISBN>
+            <lib:titulo>Charlie y la fábrica de chocolate</lib:titulo>
+            <lib:precio>8,90</lib:precio>
+        </lib:compra>
+</cli:cliente>
+
