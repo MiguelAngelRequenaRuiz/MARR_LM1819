@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Añadir noticia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <form action="guardar.php" method="post">
+        <p>
+            <label for="Cientifico">Cientifico: </label>
+            <input type="text" name="Cientifico" id="Cientifico" required>
+        </p>
+        <p>
+            <label for="Descubrimiento">Descubrimiento: </label>
+            <input type="text" name="Descubrimiento" id="Descubrimiento" required>
+        </p>
+        <p>
+            <label for="Area">Area: </label>
+            <input type="text" name="Area" id="Area" required>
+        </p>
+        <p>
+            <label for="fecha">Fecha: </label>
+            <input type="date" name="fecha" id="fecha" required>
+        </p>
+        <p>
+            <label for="texto">Texto: </label>
+            <textarea name="texto" id="texto" rows="10" cols="50"></textarea>>
+        </p>
+        <p>
+            <input type="submit" value="Añadir">
+        </p>
+    </form>
+</body>
+</html>
