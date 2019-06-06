@@ -1,6 +1,12 @@
-#logo {
-    width: 200px;
-    height: 100px;
-    border: 1px solid #000000
-    float; left:
+
+
+.enlaces ul li{
+    list-style:none;
+    float: left
+}
+
+.enalces ul li {
+    text-decoration: none;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
 }
